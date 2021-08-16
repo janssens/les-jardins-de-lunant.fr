@@ -30,7 +30,7 @@ jobs:
         run: npm install
       # Runs gulp to build
       - name: 🔥 Build production files using gulp 
-        run: gulp prod
+        run: gulp build
       # Deploy
       - name: 🚀 Rsync Deploy
         uses: up9cloud/action-rsync@master

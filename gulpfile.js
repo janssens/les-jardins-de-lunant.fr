@@ -147,3 +147,10 @@ exports.prod = series(
   parallel(prodStyles, prodScripts, prodImages, prodHTML), //Run All tasks in parallel
   buildFinish
 );
+
+exports.build = series(
+    devClean, // Clean Dist Folder
+    prodClean, // Clean Build Folder
+    parallel(devStyles, prodStyles, prodScripts, prodImages, prodHTML), //Run All tasks in parallel
+    buildFinish
+);
