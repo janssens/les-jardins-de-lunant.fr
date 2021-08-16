@@ -54,6 +54,7 @@ function devHTML(){
 } 
 
 function devStyles(){
+  console.log("\n\t","Dev styles.\n");
   const tailwindcss = require('tailwindcss');
   src(`${options.paths.src.css}/fonts/**/*`).pipe(dest(options.paths.dist.font));
   return src(`${options.paths.src.css}/**/*.scss`).pipe(sass().on('error', sass.logError))
@@ -143,14 +144,14 @@ exports.default = series(
 );
 
 exports.prod = series(
-  prodClean, // Clean Build Folder
-  parallel(prodStyles, prodScripts, prodImages, prodHTML), //Run All tasks in parallel
-  buildFinish
+    prodClean, // Clean Build Folder
+    parallel(prodStyles, prodScripts, prodImages, prodHTML), //Run All tasks in parallel
+    buildFinish
 );
 
 exports.build = series(
-    devClean, // Clean Dist Folder
-    prodClean, // Clean Build Folder
-    parallel(devStyles, prodStyles, prodScripts, prodImages, prodHTML), //Run All tasks in parallel
+    parallel(devClean,prodClean), // Clean Dist and Build Folder
+    devStyles,
+    parallel(prodStyles, prodScripts, prodImages, prodHTML), //Run All tasks in parallel
     buildFinish
 );
