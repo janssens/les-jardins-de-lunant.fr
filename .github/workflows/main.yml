@@ -40,4 +40,4 @@ jobs:
           USER: ${{ secrets.DEPLOY_SSH_USER }}
           PORT: ${{ secrets.DEPLOY_SSH_PORT }}
           TARGET: ${{ secrets.DEPLOY_SSH_TARGET }}
-          SOURCE: /build/
+          SOURCE: ./build/
