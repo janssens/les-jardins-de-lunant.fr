@@ -24,6 +24,25 @@
         <br>
         <a href="tel:+33616048907">06 16 04 89 07</a>
     </div>
+    <form method="post" action="https://news.les-jardins-de-lunant.fr/subscription/form" class="text-center mt-10">
+            <h3 class="font-bold">Recevoir des nouvelles fraiches :</h3>
+            <input type="hidden" name="nonce" />
+            <p><input type="email" name="email" required placeholder="Email" class="border border-solid border-white bg-[rgba(0,0,0,0.5)] text-white placeholder-white placeholder-opacity-60 m-2 p-2"/></p>
+            <p><input type="text" name="name" placeholder="Prénom (facultatif)" class="border border-solid border-white bg-[rgba(0,0,0,0.5)] text-white placeholder-white placeholder-opacity-60 m-2 p-2"/></p>
+
+            <ul class="text-left mx-auto w-72 bg-[rgba(0,0,0,0.5)] p-4 m-2">
+                <li>
+                    <input id="c34db" type="checkbox" name="l" checked value="c34dbef6-d5b3-4d66-b226-dc7165d82b8a" />
+                    <label for="c34db">Les amis de la ferme (travaux, formations, événements, ...)</label>
+                </li>
+                <li>
+                    <input id="aa42c" type="checkbox" name="l" checked value="aa42c625-30e8-4121-9c0d-63d0874bf345" />
+                    <label for="aa42c">Paniers légumes (vente à la ferme)</label>
+                </li>
+            </ul>
+
+            <p><input type="submit" value="S'abonner" class="bg-black text-center text-white p-5 rounded-md cursor-pointer" /></p>
+    </form>
     <script src="./js/scripts.js"></script>
 </body>
 </html>
