@@ -14,8 +14,13 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2.3.2
       # Install Dependencies
+      - name : 🛠️ setup old node
+        uses : actions/setup-node@v3
+        with :
+            node-version: 14.15
+      # Install Dependencies
       - name: 🛠️ Install Dependencies with npm
-        run: rm package-lock.json; npm install
+        run: npm install
       # Runs gulp to build
       - name: 🔥 Build production files using gulp 
         run: npm run build
